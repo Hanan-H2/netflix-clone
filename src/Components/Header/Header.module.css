@@ -1,0 +1,411 @@
+/* ============================================================
+   HEADER
+============================================================ */
+
+.header {
+  width: 100%;
+  height: 68px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 45px;
+  box-sizing: border-box;
+  color: #ffffff;
+  /* BEFORE SCROLL Header is transparent so the hero/banner can be seen behind it.*/
+  background: transparent;
+  transition:
+    background-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+/*HEADER AFTER SCROLL */
+.headerScrolled {
+  /* AFTER SCROLL Header becomes black.*/
+  background: rgba(20, 20, 20, 0.98);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+/*LEFT SIDE */
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+.logo {
+  color: #ff4d7a;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.logo:hover {
+  color: #80c4ff;
+
+  transform: scale(1.02);
+}
+
+/* NAVIGATION */
+.navMenu {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.navLink {
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: #b3b3b3;
+}
+/* RIGHT SIDE */
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+/*SEARCH CONTAINER */
+.searchContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+/* SEARCH BUTTON*/
+.searchButton {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+.searchButton:hover {
+  color: #b3b3b3;
+}
+
+.searchButton svg {
+  width: 21px;
+  height: 21px;
+  stroke-width: 2;
+}
+
+.searchInput {
+  width: 220px;
+  height: 36px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  border: 1px solid #ffffff;
+  outline: none;
+  background: #141414;
+  color: #ffffff;
+  font-size: 14px;
+  animation: searchOpen 0.6s ease;
+}
+
+.searchInput::placeholder {
+  color: #aaaaaa;
+}
+
+.searchInput:focus {
+  border-color: #ffffff;
+}
+
+@keyframes searchOpen {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+
+  to {
+    width: 220px;
+    opacity: 0.5;
+  }
+}
+
+/*NOTIFICATION CONTAINER*/
+.notificationContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/*  NOTIFICATION BUTTON */
+.notificationButton {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.notificationButton:hover {
+  color: #b3b3b3;
+}
+
+.notificationButton svg {
+  width: 21px;
+  height: 21px;
+  stroke-width: 2;
+}
+/*NOTIFICATION BADGE */
+.notificationBadge {
+  position: absolute;
+  top: -1px;
+  right: -3px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: #e50914;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* PROFILE CONTAINER*/
+.profileContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+/* PROFILE BUTTON */
+.profileButton {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.profileButton:hover {
+  color: #b3b3b3;
+}
+
+.profileButton svg {
+  width: 21px;
+  height: 21px;
+  stroke-width: 2;
+}
+/* DROPDOWN ARROW */
+.dropdownArrow {
+  width: 24px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    color 0.2s ease;
+}
+
+.dropdownArrow:hover {
+  color: #b3b3b3;
+}
+
+.dropdownArrow svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 3;
+}
+/* ARROW UP */
+.arrowUp {
+  transform: rotate(180deg);
+}
+/*  PROFILE DROPDOWN Opens BELOW USER BUTTON */
+.profileDropdown {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 180px;
+  padding: 7px 0;
+  background: rgba(20, 20, 20, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  animation: profileOpen 0.2s ease;
+}
+
+@keyframes profileOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*  PROFILE DROPDOWN ITEM */
+.dropdownItem {
+  width: 100%;
+  display: block;
+  padding: 12px 16px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdownItem:hover {
+  background: #333333;
+}
+/* PROFILE LINE */
+.dropdownLine {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+/*TABLET */
+@media (max-width: 1100px) {
+  .header {
+    padding: 0 30px;
+  }
+
+  .headerLeft {
+    gap: 28px;
+  }
+
+  .navMenu {
+    gap: 16px;
+  }
+
+  .navLink {
+    font-size: 13px;
+  }
+}
+/*TABLET SMALL */
+@media (max-width: 850px) {
+  .header {
+    padding: 0 20px;
+  }
+
+  .headerLeft {
+    gap: 20px;
+  }
+
+  .navMenu {
+    gap: 12px;
+  }
+
+  .navLink {
+    font-size: 12px;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+}
+/*MOBILE */
+@media (max-width: 700px) {
+  .header {
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  .logo {
+    font-size: 23px;
+  }
+
+  .navMenu {
+    display: none;
+  }
+
+  .headerLeft {
+    gap: 0;
+  }
+
+  .headerRight {
+    gap: 8px;
+  }
+
+  .searchInput {
+    width: 180px;
+  }
+
+  .notificationDropdown {
+    right: -45px;
+    width: 290px;
+  }
+
+  .profileDropdown {
+    right: -5px;
+    width: 170px;
+  }
+}
+/* VERY SMALL MOBILE */
+@media (max-width: 400px) {
+  .header {
+    padding: 0 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .headerRight {
+    gap: 3px;
+  }
+
+  .searchInput {
+    width: 160px;
+  }
+
+  .notificationDropdown {
+    right: -60px;
+    width: 270px;
+  }
+}

@@ -1,0 +1,23 @@
+.mainContent {
+  width: 90%;
+  margin: 0 auto;
+  min-height: 100vh;
+
+  background-color: #000;
+  color: #fff;
+
+  padding: 25px 0 60px;
+
+  /* IMPORTANT: Prevent horizontal browser scrolling. */
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .mainContent {
+    padding-top: 15px;
+    padding-bottom: 40px;
+  }
+}

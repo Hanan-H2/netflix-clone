@@ -1,0 +1,118 @@
+.rowWrapper {
+  position: relative !important;
+  margin-bottom: 35px !important;
+}
+
+/* ROW TITLE SPECS */
+.sectionHeader {
+  padding: 0 40px;
+  margin-bottom: 8px;
+}
+
+.sectionHeader h2 {
+  margin: 0;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.movieRowContainer {
+  width: 100%;
+  position: relative;
+  overflow: visible !important;
+}
+
+.rowWrapper :global(.swiper) {
+  max-width: 100%;
+  overflow: visible !important;
+}
+
+.Row :global(.swiper-slide) {
+  position: relative !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  height: auto !important;
+  overflow: visible !important;
+  box-sizing: border-box;
+  z-index: 100 !important;
+  transition:
+    transform 0.3s ease,
+    z-index 0.2s ease,
+    margin 0.3s ease;
+}
+
+.Row :global(.swiper-slide):hover {
+  z-index: 999999 !important; /* Jumps way above any 3D layout matrix layer */
+
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.Row :global(.swiper-slide):has(:hover) {
+  margin-left: 22px !important;
+  margin-right: 22px !important;
+}
+
+/* SCREEN RESPONSIVENESS BREAKPOINTS MEDIA QUERIES DESIGN GRID */
+@media (max-width: 1024px) {
+  .sectionHeader {
+    padding: 0 30px;
+  }
+  .Row :global(.swiper) {
+    padding: 10px 35px !important;
+  }
+  .Row :global(.swiper-button-prev),
+  .Row :global(.swiper-button-next) {
+    height: 95px !important;
+    top: 57px;
+  }
+  .mainContent {
+    padding: 90px 0 130px 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionHeader {
+    padding: 0 20px;
+  }
+  .sectionHeader h2 {
+    font-size: 16px;
+  }
+  .Row :global(.swiper) {
+    padding: 10px 25px !important;
+  }
+  .Row :global(.swiper-button-prev),
+  .Row :global(.swiper-button-next) {
+    width: 30px;
+    height: 85px !important;
+    top: 52px;
+  }
+  .Row :global(.swiper-slide):has(:hover) {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionHeader {
+    padding: 0 15px;
+  }
+  .Row :global(.swiper) {
+    padding: 10px 18px !important;
+  }
+  .Row :global(.swiper-button-prev),
+  .Row :global(.swiper-button-next) {
+    width: 25px;
+    height: 85px !important;
+    top: 52px;
+  }
+  .rowWrapper {
+    margin-bottom: 35px !important;
+  }
+  .mainContent {
+    padding: 80px 0 100px 0 !important;
+  }
+  .Row :global(.swiper-slide):has(:hover) {
+    margin-left: 6px !important;
+    margin-right: 6px !important;
+  }
+}
